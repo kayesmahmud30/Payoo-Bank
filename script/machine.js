@@ -24,11 +24,13 @@ function setBalance(value) {
 function showOnly(id) {
   const addMoney = document.getElementById("add-money");
   const cashout = document.getElementById("cashout");
+  const history = document.getElementById("history");
 
   //Hide All.
-  addMoney.classList.add('hidden')
-  cashout.classList.add('hidden')
+  addMoney.classList.add("hidden");
+  cashout.classList.add("hidden");
+  history.classList.add("hidden");
 
   //Show only specific one (provided ID).
-  document.getElementById(id).classList.remove('hidden')
+  document.getElementById(id).classList.remove("hidden");
 }

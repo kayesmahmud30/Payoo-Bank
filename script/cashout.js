@@ -25,6 +25,22 @@ document.getElementById("cashout-btn").addEventListener("click", function () {
   if (pin == "1234") {
     alert(" Cashout successful");
     setBalance(newBalance);
+
+    //Add the transaction to history
+    //1. Grab history-container.
+    const history = document.getElementById("history-container");
+
+    //2. Create new div.
+    const newHistory = document.createElement("div");
+
+    //3. Add innerHTML in new div.
+    newHistory.innerHTML = `<div class="transactions-card p-5 bg-base-100">
+    Cashout ${cashoutAmount} USD Successful. To Agent No: ${cashoutNumber}
+     at ${new Date()}
+    </div>`;
+
+    //4. Append the new div to history-container.
+    history.append(newHistory);
   } else {
     alert("Invalid PIN");
     return;
